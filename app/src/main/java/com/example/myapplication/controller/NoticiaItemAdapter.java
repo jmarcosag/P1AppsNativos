@@ -6,16 +6,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.myapplication.R;
 import com.example.myapplication.model.Noticia;
 
 import java.util.List;
 
-public class NoticiaListViewAdapter extends BaseAdapter {
+public class NoticiaItemAdapter extends BaseAdapter {
 
     private List<Noticia> cardNoticiaList;
 
-    public NoticiaListViewAdapter(List<Noticia> cardNoticiaList) {
+    public NoticiaItemAdapter(List<Noticia> cardNoticiaList) {
         this.cardNoticiaList = cardNoticiaList;
     }
 
@@ -37,7 +38,7 @@ public class NoticiaListViewAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null) {
-            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.noticia_item, viewGroup, false);
+            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.noticia, viewGroup, false);
         }
 
         Noticia cardNoticia = (Noticia) getItem(i);
@@ -45,8 +46,10 @@ public class NoticiaListViewAdapter extends BaseAdapter {
         imageViewIcone.setImageResource(cardNoticia.getFoto());
         TextView textViewTitulo = view.findViewById(R.id.item_titulo);
         textViewTitulo.setText(cardNoticia.getTitulo());
-        TextView textViewResumo = view.findViewById(R.id.item_descricao);
+        TextView textViewResumo = view.findViewById(R.id.item_introducao);
         textViewResumo.setText(cardNoticia.getIntroducao());
+        TextView textViewConteudo = view.findViewById(R.id.item_descricao);
+        textViewConteudo.setText(cardNoticia.getConteudo());
         TextView textViewHora = view.findViewById(R.id.item_hora);
         textViewHora.setText(cardNoticia.getHorario());
 

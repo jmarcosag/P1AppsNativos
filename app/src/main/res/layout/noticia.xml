@@ -6,10 +6,9 @@
 
     <ImageView
         android:id="@+id/item_imagem"
-        android:src="@color/cardview_dark_background"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        />
+        android:src="@color/cardview_dark_background" />
 
     <TextView
 
@@ -34,17 +33,37 @@
         android:text="titulo" />
 
     <TextView
+        android:id="@+id/item_introducao"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_titulo"
+        android:layout_marginStart="-60dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/item_imagem"
+        android:text="introducao" />
+
+    <TextView
         android:id="@+id/item_descricao"
         style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/item_titulo"
+        android:layout_below="@id/item_introducao"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:text="descricao"
+        android:textSize="15sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVolta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_descricao"
         android:layout_marginStart="0dp"
         android:layout_marginTop="5dp"
         android:textSize="15sp"
-        android:text="descricao" />
-
-
-
+        android:backgroundTint="@color/black"
+        android:padding="10dp"
+        android:text="Back" />
 
 </RelativeLayout>

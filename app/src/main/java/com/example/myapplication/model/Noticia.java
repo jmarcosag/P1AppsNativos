@@ -3,13 +3,15 @@ package com.example.myapplication.model;
 public class Noticia {
 
     private Integer codigo;
+    private int foto;
     private String titulo;
     private String introducao;
     private String conteudo;
     private String horario;
 
-    public Noticia(Integer codigo, String titulo, String introducao, String conteudo, String horario) {
+    public Noticia(Integer codigo, int foto, String titulo, String introducao, String conteudo, String horario) {
         this.codigo = codigo;
+        this.foto = foto;
         this.titulo = titulo;
         this.introducao = introducao;
         this.conteudo = conteudo;
@@ -54,5 +56,13 @@ public class Noticia {
 
     public void setHorario(String horario) {
         this.horario = horario;
+    }
+
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
     }
 }
